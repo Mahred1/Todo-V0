@@ -12,6 +12,9 @@
     background-color: rgba(240, 240, 240,0.4);
     position: relative;
 }
+.task-items{
+    transition: all 400ms ease-in;
+}
 .task-item{
     list-style: none;
     font-size: 0.6rem;
@@ -21,6 +24,7 @@
     background-color: rgba(240, 240, 240,0.7);
     border-radius: 5px;
     cursor: pointer;
+    transition: all 400ms ease-in;
 }
 
 .task-form{
@@ -34,6 +38,7 @@
     padding: 3px 6px;
     border-radius: 5px;
     color: white;
+    transition: all 400ms ease-out;
 }
 .task-form button:hover{
     background-color: white;
@@ -46,4 +51,7 @@
 }
 #my-input:focus-visible{
     outline: 0.5px solid black;
+}
+.remove{
+   display: none;
 }
