@@ -11,8 +11,11 @@ addButton.addEventListener("click",function(e){
     myInput.value="";
 
     newElement.addEventListener("click",function(e){
+       e.target.classList.add("fall");
+       e.target.addEventListener("transitionend", function(){
         e.target.classList.add("remove");
-    });
+       });
+    })
 
     e.preventDefault();
 });

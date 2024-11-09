@@ -3,14 +3,18 @@
     padding: 0;
     margin: 0;
 }
+body{
+    background-image:  linear-gradient(90deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%);;
+}
 .container{
-    width: 30vw;
+    max-width: 30vw;
+    margin: 20px auto;
     border-radius: 1rem;
-    margin: 50px auto auto auto;
-    border: 1px black solid;
+    border: 1px white solid;
     padding: 8px 10px;
     background-color: rgba(240, 240, 240,0.4);
-    position: relative;
+    transition: height 0.3s ease-in-out; 
+    
 }
 .task-items{
     transition: all 400ms ease-in;
@@ -21,15 +25,18 @@
     text-align: center;
     padding: 5px 0;
     margin: 5px 0;
-    background-color: rgba(240, 240, 240,0.7);
-    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
     transition: all 400ms ease-in;
 }
 
 .task-form{
-    position: absolute;
-    transform: translate(222px, -37px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 50px;
+
 }
 .task-form button{
     background-color: rgb(255, 142, 85);
@@ -43,15 +50,21 @@
 .task-form button:hover{
     background-color: white;
     color: black;
-    border: 0.4px solid rgb(255, 142, 85);
 }
 #my-input{
     background-color: rgb(240, 240, 240);
     border: 0.5px solid grey;
+    padding-left: 5px;
 }
 #my-input:focus-visible{
     outline: 0.5px solid black;
 }
 .remove{
    display: none;
+
+}
+
+.fall{
+    transform-origin: left;
+    transform:  rotate(50deg) translateY(80px);
 }
