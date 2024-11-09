@@ -65,7 +65,7 @@ body{
     margin: 5px 0;
     background-color: rgb(255, 255, 255);
     cursor: pointer;
-    transition: all 400ms ease-in;
+    transition: all 200ms ease-in;
 }
 
 .task-form{
@@ -106,4 +106,8 @@ body{
     transform-origin: left;
     transform:  rotate(50deg) translateY(80px);
     opacity: 0.7;
+}
+.complete{
+    text-decoration: line-through;
+    opacity: 0.5;
 }

@@ -33,7 +33,9 @@ addButton.addEventListener("click",function(e){
 
     e.preventDefault();
 
-    trashCan.addEventListener("click", removeTodo);
+    trashCan.childNodes[0].addEventListener("click", removeTodo);
+    checkBox.addEventListener("click",completeTodo);
+
 });
 
 //remove to do 
@@ -43,6 +45,12 @@ function removeTodo(e){
     e.target.parentNode.parentNode.addEventListener("transitionend", function(e){
         e.target.classList.add("remove");
     })
+    
+    e.stopPropagation();
+}
 
+function completeTodo(e){
+    let listTodo=e.target.parentNode.parentNode.children[0];
+    listTodo.classList.toggle("complete");
 }
 
