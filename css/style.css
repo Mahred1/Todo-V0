@@ -22,6 +22,7 @@ body{
 .task-item{
     display: flex;
     justify-content: space-between;
+    transition: all 0.5s ease;
 }
 .task-item li{
     flex: 1;
@@ -30,7 +31,13 @@ body{
 .fa-trash-can,
 .fa-check-square{
     color: white;
-    width: 15px;
+    width: 15px;   
+}
+.fa-trash-can:hover{
+    color: rgb(251, 61, 51);
+}
+.fa-check-square:hover{
+    color: rgb(0, 209, 0);
 }
 .task-item button{
     padding: 5px 3px;
@@ -38,12 +45,17 @@ body{
     border:none;
     border-radius: none;
     cursor: pointer;
+    transition: all 0.5s ease;
 }
 .check-box{
     background-color: rgb(0, 209, 0);
 }
 .trash-can{
     background-color: rgb(251, 61, 51);
+}
+.check-box:hover,
+.trash-can:hover{
+    background-color: white;
 }
 .item{
     list-style: none;
@@ -93,4 +105,5 @@ body{
 .fall{
     transform-origin: left;
     transform:  rotate(50deg) translateY(80px);
+    opacity: 0.7;
 }
