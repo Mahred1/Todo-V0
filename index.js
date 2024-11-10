@@ -3,7 +3,6 @@ let addButton = document.querySelector(".add-button");
 let myInput = document.getElementById("my-input");
 let filter = document.querySelector(".filter-todo");
 
-
 addButton.addEventListener("click",function(e){
 
     //add new todo div
@@ -16,6 +15,9 @@ addButton.addEventListener("click",function(e){
     newList.classList.add("item");
     newList.innerText = myInput.value;
     newElement.appendChild(newList);
+    // save to do to local storage
+
+    saveLocalTodos(myInput.value);
 
     //add remove button
     let trashCan = document.createElement("button");
@@ -86,5 +88,15 @@ function filterTodo(e){
     
 }
 
-
-
+//Save to lacla storage
+function saveLocalTodos(input){
+    let todos;
+    if (localStorage.getItem("todos") === null) {
+        todos =[];
+    }else{
+        todos=JSON.parse(localStorage.getItem("todos"));
+    }
+    todos.push(input);
+    localStorage.setItem("todos",JSON.stringify(todos));
+   
+}
