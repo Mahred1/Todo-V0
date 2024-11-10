@@ -34,9 +34,9 @@ addButton.addEventListener("click",function(e){
 
     e.preventDefault();
    
-    trashCan.childNodes[0].addEventListener("click", removeTodo);
     checkBox.addEventListener("click",completeTodo);
     filter.addEventListener("click",filterTodo);
+    trashCan.childNodes[0].addEventListener("click", removeTodo);
 
 });
 
@@ -63,7 +63,7 @@ function filterTodo(e){
         if (element.childNodes[0].classList.contains("item")) {
             switch (e.target.value) {
                case "all":
-                  element.style.display = "flex";
+                    element.style.display = "flex";
                    break;
                case "completed":
                     if (element.childNodes[0].classList.contains("complete")) {
@@ -78,10 +78,7 @@ function filterTodo(e){
                 } else {
                     element.style.display = "none";
                 }
-                   break;
-            
-               default:
-                   break;
+                  
             }
          }
     });

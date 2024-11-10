@@ -99,7 +99,7 @@ body{
     outline: 0.5px solid black;
 }
 .remove{
-   display: none;
+   display: none !important;
 
 }
 
