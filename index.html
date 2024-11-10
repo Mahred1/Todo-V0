@@ -10,12 +10,18 @@
 <body>
     <form action="" class="task-form">
         <input type="text" id="my-input">
-        <button class="add-button">Add</button>
+        <div>
+            <button class="add-button">Add</button>
+            <select  class="filter-todo">
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="uncompleted">Uncompleted</option>
+            </select>
+        </div>
         
     </form>
     <div class="container">
-        <ul class="task-items">
-        </ul>
+        <ul class="task-items"></ul>
     </div>
 
 

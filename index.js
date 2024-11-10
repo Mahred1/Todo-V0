@@ -1,6 +1,7 @@
 let todoList= document.querySelector(".task-items");
 let addButton = document.querySelector(".add-button");
 let myInput = document.getElementById("my-input");
+let filter = document.querySelector(".filter-todo");
 
 
 addButton.addEventListener("click",function(e){
@@ -32,9 +33,10 @@ addButton.addEventListener("click",function(e){
     myInput.value="";
 
     e.preventDefault();
-
+   
     trashCan.childNodes[0].addEventListener("click", removeTodo);
     checkBox.addEventListener("click",completeTodo);
+    filter.addEventListener("click",filterTodo);
 
 });
 
@@ -48,9 +50,44 @@ function removeTodo(e){
     
     e.stopPropagation();
 }
-
+//completed to do
 function completeTodo(e){
     let listTodo=e.target.parentNode.parentNode.children[0];
     listTodo.classList.toggle("complete");
 }
+
+//filter to do
+function filterTodo(e){
+    let todoTask = document.querySelector(".task-items").childNodes;
+    todoTask.forEach(element => {
+        if (element.childNodes[0].classList.contains("item")) {
+            switch (e.target.value) {
+               case "all":
+                  element.style.display = "flex";
+                   break;
+               case "completed":
+                    if (element.childNodes[0].classList.contains("complete")) {
+                        element.style.display = "flex";
+                    } else {
+                        element.style.display = "none";
+                    }
+                   break;
+               case "uncompleted":
+                if (!element.childNodes[0].classList.contains("complete")) {
+                    element.style.display = "flex";
+                } else {
+                    element.style.display = "none";
+                }
+                   break;
+            
+               default:
+                   break;
+            }
+         }
+    });
+     
+    
+}
+
+
 
